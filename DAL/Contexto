@@ -1,0 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
+
+namespace Daniel_Montero_Ap1_p1
+{
+    class Contexto : DbContext
+    {
+       
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite(@"data source = DATA\Aportes.db");
+        }
+    }
+}
