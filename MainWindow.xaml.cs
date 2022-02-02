@@ -38,7 +38,7 @@ namespace Daniel_Montero_Ap1_p1
         {
              var cConsultas = new cConsultas();
             cConsultas.Show();
-            /*h*/
+           
         }
     }
 }
