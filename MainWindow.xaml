@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daniel_Montero_Ap1_p1"
         mc:Ignorable="d"
-        Title="Sistema" Height="300" Width="400">
+        Title="Sistemas" Height="300" Width="400">
     <Grid>
 
         <StackPanel> 
