@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Daniel_Montero_Ap1_p1.UI.Consultas;
+using Daniel_Montero_Ap1_p1.UI.Registros;
 
 namespace Daniel_Montero_Ap1_p1
 {
@@ -28,8 +29,8 @@ namespace Daniel_Montero_Ap1_p1
 
         private void RegistroLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-           /* var rLibros = new rLibros();
-            rLibros.Show();*/
+           var cRegistros = new cRegistros();
+            cRegistros.Show();
         }
 
 
