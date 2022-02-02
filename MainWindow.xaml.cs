@@ -35,7 +35,7 @@ namespace Daniel_Montero_Ap1_p1
 
         private void ConsultaLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-             var  cConsultas = new cConsultas();
+             var cConsultas = new cConsultas();
             cConsultas.Show();
             
         }
