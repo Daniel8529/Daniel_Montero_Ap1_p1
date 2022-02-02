@@ -24,5 +24,19 @@ namespace Daniel_Montero_Ap1_p1
         {
             InitializeComponent();
         }
+
+        private void RegistroLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+           /* var rLibros = new rLibros();
+            rLibros.Show();*/
+        }
+
+
+        private void ConsultaLibrosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            /* var cLibros = new cLibros();
+            cLibros.Show();
+            */
+        }
     }
 }
