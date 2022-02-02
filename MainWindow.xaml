@@ -10,11 +10,11 @@
         <StackPanel Orientation="Vertical">
             <Menu Height="18">
                 <MenuItem Header="Registros">
-                    <MenuItem Header="Registro" x:Name="AportesMenuItem" ></MenuItem>
+                    <MenuItem Header="Registro" x:Name="AportesMenuItem" Click="AportesMenuItem_Click" ></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Consultar">
-                    <MenuItem Header="Consulta" x:Name="consultasAportes" ></MenuItem>
+                    <MenuItem Header="Consulta" x:Name="consultasAportes" Click="consultasAportes_Click" ></MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>
