@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Daniel_Montero_Ap1_p1.UI.Consultas;
 
 namespace Daniel_Montero_Ap1_p1
 {
@@ -34,9 +35,9 @@ namespace Daniel_Montero_Ap1_p1
 
         private void ConsultaLibrosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            /* var cLibros = new cLibros();
-            cLibros.Show();
-            */
+             var cConsultas = new cConsultas();
+            cConsultas.Show();
+            
         }
     }
 }

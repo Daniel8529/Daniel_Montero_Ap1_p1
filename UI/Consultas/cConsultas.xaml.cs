@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace Daniel_Montero_Ap1_p1.UI.Consultas
 {
-    public partial class cLibros : Window
+    public partial class cConsultas: Window
     {
 
-        public cLibros()
+        public cConsultas()
         {
             //InitializeComponent();
         }
