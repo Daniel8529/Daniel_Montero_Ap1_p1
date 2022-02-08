@@ -7,7 +7,7 @@ namespace Daniel_Montero_Ap1_p1.DAL
    public class Contexto : DbContext
     { 
 
-        public DbSet<Productos> productos {get; set;}
+        public DbSet<Productos> Productos {get; set;}
        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
