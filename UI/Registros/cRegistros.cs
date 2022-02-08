@@ -49,7 +49,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
            Productos producto = new Productos(int.Parse(Productoidtxt.Text),Descriciontxt.Text,int.Parse(Existenciatxt.Text),
-           int.Parse(Costotxt.Text),int.Parse(ValorInventariotxt.Text));
+           int.Parse(Costotxt.Text));
            if(!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
            {
                var paso=ProductosBLL.insertar(producto);
@@ -63,10 +63,10 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
         {
             if(!ProductosBLL.Eliminar(int.Parse(Productoidtxt.Text)))
            {
-              
-               MessageBox.Show("Eliminado con exito");
+              MessageBox.Show("No  exixte no se puede eliminar");
+               
            }else{
-               MessageBox.Show("No  exixte no se puede eliminar");
+               MessageBox.Show("Eliminado con exito");
            }
          
         }

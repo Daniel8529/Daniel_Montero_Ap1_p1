@@ -13,13 +13,13 @@ namespace Daniel_Montero_Ap1_p1.Entidades
 
        public int ValorInventario { get; set; }
        
-       public Productos(int productoId , string? descripcion,int  existencia,int  costo,int valorInventario  )
+       public Productos(int productoId , string? descripcion,int  existencia,int  costo )
        {
            this.ProductoId=productoId;
            this.Descripcion=descripcion;
            this.Existencia=existencia;
            this.Costo=costo;
-           this.ValorInventario=valorInventario;
+          
 
 
        }
