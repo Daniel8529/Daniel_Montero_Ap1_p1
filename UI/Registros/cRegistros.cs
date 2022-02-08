@@ -35,6 +35,11 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
+            Productoidtxt.Text="";
+            Descriciontxt.Text="";
+            Existenciatxt.Text="";
+            Costotxt.Text="";
+            ValorInventariotxt.Text="";
        
         }
 
