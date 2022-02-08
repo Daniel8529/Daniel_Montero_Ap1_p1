@@ -50,11 +50,24 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
         {
            Productos producto = new Productos(int.Parse(Productoidtxt.Text),Descriciontxt.Text,int.Parse(Existenciatxt.Text),
            int.Parse(Costotxt.Text),int.Parse(ValorInventariotxt.Text));
-           //if(!ProductosBLL)
+           if(!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
+           {
+               var paso=ProductosBLL.insertar(producto);
+               MessageBox.Show("Guardado con exito");
+           }else{
+               MessageBox.Show("Ya exixte");
+           }
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            if(!ProductosBLL.Eliminar(int.Parse(Productoidtxt.Text)))
+           {
+              
+               MessageBox.Show("Eliminado con exito");
+           }else{
+               MessageBox.Show("No  exixte no se puede eliminar");
+           }
          
         }
     }

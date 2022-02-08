@@ -60,6 +60,7 @@ namespace Daniel_Montero_Ap1_p1.BLL
 
 
                     contexto.Productos.Remove(adicionales);
+                    paso=contexto.SaveChanges()>0;
                 }
             }
             catch (Exception)
