@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Daniel_Montero_Ap1_p1.DAL
 {
-    class Contexto : DbContext
+   public class Contexto : DbContext
     { 
 
         public DbSet<Productos> productos {get; set;}
