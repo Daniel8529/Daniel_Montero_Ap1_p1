@@ -100,6 +100,30 @@ namespace Daniel_Montero_Ap1_p1.BLL
             return encontrado;
           
       }
+      public static bool Existe(string id)
+      {
+        
+            Contexto contexto = new Contexto();
+              bool encontrado = false;
+
+            try
+            {
+
+                encontrado=contexto.Productos.Any(e=>e.Descripcion==id);
+              
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+
+            }
+            return encontrado;
+          
+      }
       public static List<Productos> GeLista()
       {
            using (var contexto = new Contexto())
