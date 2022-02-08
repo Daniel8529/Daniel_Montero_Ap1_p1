@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-
+using Daniel_Montero_Ap1_p1.Entidades;
+using Daniel_Montero_Ap1_p1.DAL;
 
 namespace Daniel_Montero_Ap1_p1.DAL
 {

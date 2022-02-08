@@ -1,7 +1,7 @@
 using System.Windows.Input;
 using System.ComponentModel.DataAnnotations;
 
-namespace Daniel_Montero_Ap1_p1
+namespace Daniel_Montero_Ap1_p1.Entidades
 {
 
    public class Productos{
