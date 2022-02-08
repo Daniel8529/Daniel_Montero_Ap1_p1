@@ -5,21 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daniel_Montero_Ap1_p1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro " Height="300" Width="300">
+        Title="Registro " Height="350" Width="300">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
            
            <!-- LibroId -->
             <StackPanel Orientation="Vertical">
-                <Label Content="Id:"/>
+                <Label Content="Productoid:"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Text="{Binding LibroId}" Width="100" />
+                    <TextBox x:Name="Productoidtxt" Width="100" />
                     <Button Content="🔎 Buscar" Click="BuscarButton_Click" /> 
                 </StackPanel>
             </StackPanel>
 
+             <StackPanel Orientation="Vertical">
+                <Label Content="Descricion:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox  x:Name="Descriciontxt" Width="100" />
+                  
+                </StackPanel>
+            </StackPanel>
+
+
+             <StackPanel Orientation="Vertical">
+                <Label Content="Existencia:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox  x:Name="Existenciatxt"  Width="100" />
+                </StackPanel>
+            </StackPanel>
+
+              <StackPanel Orientation="Vertical">
+                <Label Content="Costo:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox  x:Name="Costotxt"  Width="100" />
+                </StackPanel>
+            </StackPanel>
+          
+             <StackPanel Orientation="Vertical">
+                <Label Content="ValorInventario:"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox  x:Name="ValorInventario" Width="100" />
+                </StackPanel>
+            </StackPanel>
 
         
 
