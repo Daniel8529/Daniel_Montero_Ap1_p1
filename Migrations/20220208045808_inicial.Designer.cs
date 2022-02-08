@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Daniel_Montero_Ap1_p1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220208023825_inicial")]
+    [Migration("20220208045808_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace Daniel_Montero_Ap1_p1.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.1");
 
-            modelBuilder.Entity("Daniel_Montero_Ap1_p1.Productos", b =>
+            modelBuilder.Entity("Daniel_Montero_Ap1_p1.Entidades.Productos", b =>
                 {
                     b.Property<int>("ProductoId")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace Daniel_Montero_Ap1_p1.Migrations
 
                     b.HasKey("ProductoId");
 
-                    b.ToTable("productos");
+                    b.ToTable("Productos");
                 });
 #pragma warning restore 612, 618
         }
