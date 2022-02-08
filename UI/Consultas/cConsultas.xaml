@@ -16,8 +16,8 @@
                 <Label Content="Filtro:"/>
                 <ComboBox x:Name="FiltroComboBox" Width="100">
                     <ComboBox.Items> 
-                        <ComboBoxItem Content="Titulo" />
-                        <ComboBoxItem Content="Grupo" />
+                        <ComboBoxItem Content="consulta" />
+                   
                     </ComboBox.Items>
                 </ComboBox>
 
