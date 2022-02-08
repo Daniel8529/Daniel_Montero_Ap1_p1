@@ -52,10 +52,10 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
            int.Parse(Costotxt.Text));
            if(!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
            {
-               if(!ProductosBLL.Existe(int.Parse(Descriciontxt.Text)))
+               if(!ProductosBLL.Existes(Descriciontxt.Text))
                 {
 
-                  var pasos=ProductosBLL.insertar(producto);
+                  var paso=ProductosBLL.insertar(producto);
                    MessageBox.Show("Guardado con exito");
 
                 }else{
@@ -63,8 +63,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
                 }
                
                
-               var paso=ProductosBLL.insertar(producto);
-               MessageBox.Show("Guardado con exito");
+              
            }else{
                MessageBox.Show("Ya exixte");
            }
