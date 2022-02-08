@@ -13,5 +13,9 @@ namespace Daniel_Montero_Ap1_p1
     /// </summary>
     public partial class App : Application
     {
+        private void App_DispatcherUnhandledException(Object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs args)
+        {
+            MessageBox.Show($"Ocurrio un error:({args.Exception.Message}","Errror no controlado",  MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
