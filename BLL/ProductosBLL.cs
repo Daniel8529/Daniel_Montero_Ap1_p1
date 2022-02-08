@@ -100,7 +100,7 @@ namespace Daniel_Montero_Ap1_p1.BLL
             return encontrado;
           
       }
-      public static bool Existe(string id)
+      public static bool Existes(string id)
       {
         
             Contexto contexto = new Contexto();
