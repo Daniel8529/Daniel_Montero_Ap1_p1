@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Linq;
 using System.Collections.Generic;
+using Daniel_Montero_Ap1_p1.Entidades;
+using Daniel_Montero_Ap1_p1.BLL;
 
 namespace Daniel_Montero_Ap1_p1.UI.Registros
 {
@@ -46,7 +48,9 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-           
+           Productos producto = new Productos(int.Parse(Productoidtxt.Text),Descriciontxt.Text,int.Parse(Existenciatxt.Text),
+           int.Parse(Costotxt.Text),int.Parse(ValorInventariotxt.Text));
+           //if(!ProductosBLL)
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
