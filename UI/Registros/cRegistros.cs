@@ -28,10 +28,10 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
             var encontrado = ProductosBLL.Buscar(int.Parse(Productoidtxt.Text));
             if(encontrado != null)
             {
-              Descriciontxt.Text=encontrado.ToString();
-              Existenciatxt.Text=encontrado.ToString();
-              Costotxt.Text=encontrado.ToString();
-              ValorInventariotxt.Text=encontrado.ToString();
+              Descriciontxt.Text=encontrado.Descripcion.ToString();
+              Existenciatxt.Text=encontrado.Existencia.ToString();
+              Costotxt.Text=encontrado.Costo.ToString();
+              ValorInventariotxt.Text=encontrado.ValorInventario.ToString();
                 
             }
             else 
@@ -67,6 +67,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
             }
             else
             {
+              
                 int Existencia_int = int.Parse(Existenciatxt.Text);
                 int Costo_int = int.Parse(Costotxt.Text);
                 int ValorInventario_int = Existencia_int * Costo_int;
