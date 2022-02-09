@@ -56,7 +56,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
         {
 
 
-            bool pasa = false;
+            //bool pasa = false;
             if (Descriciontxt.Text == string.Empty || Productoidtxt.Text == string.Empty || Existenciatxt.Text == string.Empty || Costotxt.Text == string.Empty)
             {
 
