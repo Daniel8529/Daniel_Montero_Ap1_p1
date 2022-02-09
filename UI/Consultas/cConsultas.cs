@@ -16,13 +16,34 @@ namespace Daniel_Montero_Ap1_p1.UI.Consultas
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var lista = new List<Productos>();
-            if(FiltroComboBox.Text=="consulta")
+            
+            var listado = new List<Productos>();
+            
+            if (FiltroComboBox.Text == "Producto")
             {
-                if(string.IsNullOrWhiteSpace(CriterioTextBox.Text))
-                {
-                    // lista=ProductosBLL.GeLista(l=> true);
+                if (string.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                { //si no hay criterio, busco todos         
+                    listado = ProductosBLL.GetList(l => true);
+
                 }
+                else
+                {
+                    
+                    switch (FiltroComboBox.SelectedIndex)
+                    {
+                        case 0:
+                            listado = ProductosBLL.GetList(l => l.ProductoId.ToString()==(CriterioTextBox.Text));
+
+                            break;
+
+
+
+
+                    }
+                }
+                Base.ItemsSource = null;
+                Base.ItemsSource = listado;
+
             }
           
 
