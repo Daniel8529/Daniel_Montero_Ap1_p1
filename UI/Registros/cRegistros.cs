@@ -13,7 +13,9 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
         public cRegistros()
         {
+
             InitializeComponent();
+            
 
 
         }
@@ -23,8 +25,20 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-
-
+            var encontrado = ProductosBLL.Buscar(int.Parse(Productoidtxt.Text));
+            if(encontrado != null)
+            {
+              Descriciontxt.Text=encontrado.ToString();
+              Existenciatxt.Text=encontrado.ToString();
+              Costotxt.Text=encontrado.ToString();
+              ValorInventariotxt.Text=encontrado.ToString();
+                
+            }
+            else 
+            {
+                
+                MessageBox.Show("No se pudo encontar el producto", "Falido",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +54,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-        
+
 
             bool pasa = false;
             if (Descriciontxt.Text == string.Empty || Productoidtxt.Text == string.Empty || Existenciatxt.Text == string.Empty || Costotxt.Text == string.Empty)
@@ -53,15 +67,17 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
             }
             else
             {
-                int Existencia_int=int.Parse(Existenciatxt.Text);
-                int Costo_int=int.Parse(Costotxt.Text);
-                int ValorInventario_int=Existencia_int*Costo_int;
-                 ValorInventariotxt.Text=ValorInventario_int.ToString();
+                int Existencia_int = int.Parse(Existenciatxt.Text);
+                int Costo_int = int.Parse(Costotxt.Text);
+                int ValorInventario_int = Existencia_int * Costo_int;
+                ValorInventariotxt.Text = ValorInventario_int.ToString();
+               
+            
 
-             
                 Productos producto = new Productos(int.Parse(Productoidtxt.Text), Descriciontxt.Text, int.Parse(Existenciatxt.Text),
-              int.Parse(Costotxt.Text),ValorInventario_int);
-             
+              int.Parse(Costotxt.Text), ValorInventario_int);
+       
+
                 if (!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
                 {
                     if (!ProductosBLL.Existes(Descriciontxt.Text))
@@ -69,7 +85,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 
                         var paso = ProductosBLL.insertar(producto);
                         MessageBox.Show("Guardado con exito");
-
+                   
                     }
                     else
                     {
@@ -83,7 +99,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
                 {
                     MessageBox.Show("Ya exixte");
                 }
-             
+
             }
 
         }

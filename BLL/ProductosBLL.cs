@@ -22,6 +22,25 @@ namespace Daniel_Montero_Ap1_p1.BLL
             }
             return paso;
         }
+        public static Productos? Buscar(int ProductoId)
+        {
+            Contexto contexto = new Contexto();
+            Productos? productos;
+            try
+            {
+                productos = contexto.Productos.Find(ProductoId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return productos;
+        }
+
 
         public static bool Editar(Productos editar)
         {
