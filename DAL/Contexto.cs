@@ -11,7 +11,7 @@ namespace Daniel_Montero_Ap1_p1.DAL
        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"data source = DATA\Aportes.db");
+            optionsBuilder.UseSqlite(@"data source = DATA\Data.db");
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Daniel_Montero_Ap1_p1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220208045808_inicial")]
+    [Migration("20220209220221_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace Daniel_Montero_Ap1_p1.Migrations
                     b.Property<int>("Existencia")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ValorInventario")
-                        .HasColumnType("INTEGER");
+                    b.Property<float>("ValorInventario")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ProductoId");
 
