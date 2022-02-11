@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daniel_Montero_Ap1_p1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro " Height="350" Width="300">
+        Title="Registro " Height="370" Width="350">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
