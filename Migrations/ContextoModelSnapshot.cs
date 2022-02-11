@@ -31,8 +31,8 @@ namespace Daniel_Montero_Ap1_p1.Migrations
                     b.Property<int>("Existencia")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ValorInventario")
-                        .HasColumnType("INTEGER");
+                    b.Property<float>("ValorInventario")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ProductoId");
 

@@ -9,76 +9,119 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
 {
     public partial class cRegistros : Window
     {
-       
+
 
         public cRegistros()
         {
+
             InitializeComponent();
-
-         
-        }
-
-        private void Cargar()
-        {
-
-        }
-
-        private void Limpiar()
-        {
             
+
+
         }
 
-       
+
+
+
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-           
-
+            var encontrado = ProductosBLL.Buscar(int.Parse(Productoidtxt.Text));
+            if(encontrado != null)
+            {
+              Descriciontxt.Text=encontrado.Descripcion.ToString();
+              Existenciatxt.Text=encontrado.Existencia.ToString();
+              Costotxt.Text=encontrado.Costo.ToString();
+              ValorInventariotxt.Text=encontrado.ValorInventario.ToString();
+                
+            }
+            else 
+            {
+                
+                MessageBox.Show("No se pudo encontar el producto", "Falido",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
-            Productoidtxt.Text="";
-            Descriciontxt.Text="";
-            Existenciatxt.Text="";
-            Costotxt.Text="";
-            ValorInventariotxt.Text="";
-       
+            Productoidtxt.Text = "";
+            Descriciontxt.Text = "";
+            Existenciatxt.Text = "";
+            Costotxt.Text = "";
+            ValorInventariotxt.Text = "";
+
         }
 
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-           Productos producto = new Productos(int.Parse(Productoidtxt.Text),Descriciontxt.Text,int.Parse(Existenciatxt.Text),
-           int.Parse(Costotxt.Text));
-           if(!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
-           {
-               if(!ProductosBLL.Existes(Descriciontxt.Text))
+
+
+            //bool pasa = false;
+            if (Descriciontxt.Text == string.Empty || Productoidtxt.Text == string.Empty || Existenciatxt.Text == string.Empty || Costotxt.Text == string.Empty)
+            {
+
+                MessageBox.Show("Debe completar la informacion");
+
+                return;
+
+            }
+            else
+            {
+              
+                int Existencia_int = int.Parse(Existenciatxt.Text);
+                int Costo_int = int.Parse(Costotxt.Text);
+                int ValorInventario_int = Existencia_int * Costo_int;
+                ValorInventariotxt.Text = ValorInventario_int.ToString();
+               
+            
+
+                Productos producto = new Productos(int.Parse(Productoidtxt.Text), Descriciontxt.Text, int.Parse(Existenciatxt.Text),
+              int.Parse(Costotxt.Text), ValorInventario_int);
+       
+
+                if (!ProductosBLL.Existe(int.Parse(Productoidtxt.Text)))
                 {
+                    if (!ProductosBLL.Existes(Descriciontxt.Text))
+                    {
 
-                  var paso=ProductosBLL.insertar(producto);
-                   MessageBox.Show("Guardado con exito");
+                        var paso = ProductosBLL.insertar(producto);
+                        MessageBox.Show("Guardado con exito");
+                   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya exixte");
+                    }
 
-                }else{
+
+
+                }
+                else
+                {
                     MessageBox.Show("Ya exixte");
                 }
-               
-               
-              
-           }else{
-               MessageBox.Show("Ya exixte");
-           }
+
+            }
+
         }
+
+
+
+
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!ProductosBLL.Eliminar(int.Parse(Productoidtxt.Text)))
-           {
-              MessageBox.Show("No  exixte no se puede eliminar");
-               
-           }else{
-               MessageBox.Show("Eliminado con exito");
-           }
-         
+            if (!ProductosBLL.Eliminar(int.Parse(Productoidtxt.Text)))
+            {
+                MessageBox.Show("No  exixte no se puede eliminar");
+
+
+            }
+            else
+            {
+                MessageBox.Show("Eliminado con exito");
+            }
+
         }
     }
 }

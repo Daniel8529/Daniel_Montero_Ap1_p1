@@ -16,7 +16,7 @@
                 <Label Content="Filtro:"/>
                 <ComboBox x:Name="FiltroComboBox" Width="100">
                     <ComboBox.Items> 
-                        <ComboBoxItem Content="consulta" />
+                        <ComboBoxItem Content="Producto" />
                    
                     </ComboBox.Items>
                 </ComboBox>
@@ -32,7 +32,7 @@
             </StackPanel>
 
             <!-- GRID -->
-            <DataGrid x:Name="LibrosDataGrid"  Height="250" Width="380"> 
+            <DataGrid x:Name="Base"  Height="250" Width="380"> 
               
             </DataGrid>
 

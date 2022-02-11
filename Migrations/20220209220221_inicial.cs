@@ -17,7 +17,7 @@ namespace Daniel_Montero_Ap1_p1.Migrations
                     Descripcion = table.Column<string>(type: "TEXT", nullable: true),
                     Existencia = table.Column<int>(type: "INTEGER", nullable: false),
                     Costo = table.Column<int>(type: "INTEGER", nullable: false),
-                    ValorInventario = table.Column<int>(type: "INTEGER", nullable: false)
+                    ValorInventario = table.Column<float>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {

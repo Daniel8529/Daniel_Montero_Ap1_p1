@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using Daniel_Montero_Ap1_p1.Entidades;
 using Daniel_Montero_Ap1_p1.DAL;
+using System.Linq.Expressions;
 
 namespace Daniel_Montero_Ap1_p1.BLL
 {
@@ -21,6 +22,25 @@ namespace Daniel_Montero_Ap1_p1.BLL
             }
             return paso;
         }
+        public static Productos? Buscar(int ProductoId)
+        {
+            Contexto contexto = new Contexto();
+            Productos? productos;
+            try
+            {
+                productos = contexto.Productos.Find(ProductoId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return productos;
+        }
+
 
         public static bool Editar(Productos editar)
         {
@@ -124,6 +144,24 @@ namespace Daniel_Montero_Ap1_p1.BLL
             return encontrado;
           
       }
+      public static List<Productos> GetList(Expression<Func<Productos, bool>> criterio)
+        {
+            Contexto contexto = new Contexto();
+            List<Productos> lista = new List<Productos>();
+            try
+            {
+                lista = contexto.Productos.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
       public static List<Productos> GeLista()
       {
            using (var contexto = new Contexto())
@@ -133,28 +171,7 @@ namespace Daniel_Montero_Ap1_p1.BLL
       
 
       }
-        /* public static List<Productos> GetList(Expression <Func<Productos,bool>> criterio)
-           {
-               Contexto contexto =new Contexto();
-               List<Productos> lista =new List<Productos>();
-               try
-               {
-                   lista=contexto.Productos.Where(criterio).ToList();
-
-               }
-               catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-
-            }
-            return lista;
-
-           }
-           */
+          
 
 
 
