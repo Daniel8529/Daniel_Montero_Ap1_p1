@@ -12,15 +12,16 @@ namespace Daniel_Montero_Ap1_p1.UI.Consultas
         public cConsultas()
         {
             InitializeComponent();
+             var lista =ProductosBLL.GeLista();
+             Base.ItemsSource = lista;
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             
             var listado = new List<Productos>();
-            
-            if (FiltroComboBox.Text == "Producto")
-            {
+           
+           
                 if (string.IsNullOrWhiteSpace(CriterioTextBox.Text))
                 { //si no hay criterio, busco todos         
                     listado = ProductosBLL.GetList(l => true);
@@ -28,6 +29,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Consultas
                 }
                 else
                 {
+                   
                     
                     switch (FiltroComboBox.SelectedIndex)
                     {
@@ -35,7 +37,9 @@ namespace Daniel_Montero_Ap1_p1.UI.Consultas
                             listado = ProductosBLL.GetList(l => l.ProductoId.ToString()==(CriterioTextBox.Text));
 
                             break;
-
+                        case 1:
+                          listado = ProductosBLL.GetList(l => l.Descripcion==(CriterioTextBox.Text));
+                           break;
 
 
 
@@ -44,10 +48,10 @@ namespace Daniel_Montero_Ap1_p1.UI.Consultas
                 Base.ItemsSource = null;
                 Base.ItemsSource = listado;
 
-            }
+            
+         
           
 
         }
-
     }
 }

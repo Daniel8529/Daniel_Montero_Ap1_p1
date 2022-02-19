@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daniel_Montero_Ap1_p1.UI.Consultas"
         mc:Ignorable="d"
-        Title="Consulta" Height="320" Width="500">
+        Title="Consulta" Height="320" Width="530">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
@@ -16,7 +16,8 @@
                 <Label Content="Filtro:"/>
                 <ComboBox x:Name="FiltroComboBox" Width="100">
                     <ComboBox.Items> 
-                        <ComboBoxItem Content="Producto" />
+                        <ComboBoxItem Content="Id" />
+                         <ComboBoxItem Content="Descripcion"/>
                    
                     </ComboBox.Items>
                 </ComboBox>

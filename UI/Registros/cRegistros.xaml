@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Daniel_Montero_Ap1_p1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro " Height="370" Width="350">
+        Title="Registro " Height="370" Width="410">
     <Grid>
 
         <StackPanel Orientation="Vertical" Margin="10"> 
@@ -63,7 +63,11 @@
                         HorizontalAlignment="Center" >
                 
                 <Button Content="🆕 Nuevo" Click="NuevoButton_Click"/>
+
                 <Button Content="✔ Guardar" Click="GuardarButton_Click" />
+
+                 <Button Content="Editar" Click="Editar_Click" />
+                 
                 <Button Content="⛔ Eliminar" Click="EliminarButton_Click"/>
             </StackPanel>
 

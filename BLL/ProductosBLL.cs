@@ -40,17 +40,35 @@ namespace Daniel_Montero_Ap1_p1.BLL
             }
             return productos;
         }
+        public static bool Existe(string descripcion)
+        {
+            Contexto contexto = new Contexto();
+            bool encontrado = false;
 
-
-        public static bool Editar(Productos editar)
+            try
+            {  
+                encontrado = contexto.Productos.Any(l => l.Descripcion.ToLower() == descripcion.ToLower());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return encontrado;
+        }
+        public static bool Editar(Productos edita)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
+
             try
             {
-                contexto.Entry(editar).State = EntityState.Modified;
+                //marcar la entidad como modificada para que el contexto sepa como proceder
+                contexto.Entry(edita).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
-
 
 
 
@@ -62,10 +80,10 @@ namespace Daniel_Montero_Ap1_p1.BLL
             finally
             {
                 contexto.Dispose();
-
             }
             return paso;
         }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -80,7 +98,7 @@ namespace Daniel_Montero_Ap1_p1.BLL
 
 
                     contexto.Productos.Remove(adicionales);
-                    paso=contexto.SaveChanges()>0;
+                    paso = contexto.SaveChanges() > 0;
                 }
             }
             catch (Exception)
@@ -94,19 +112,21 @@ namespace Daniel_Montero_Ap1_p1.BLL
             }
             return paso;
 
-        
-      }
-      public static bool Existe(int id)
-      {
-        
+
+        }
+
+
+        public static bool Existes(string id)
+        {
+
             Contexto contexto = new Contexto();
-              bool encontrado = false;
+            bool encontrado = false;
 
             try
             {
 
-                encontrado=contexto.Productos.Any(e=>e.ProductoId==id);
-              
+                encontrado = contexto.Productos.Any(e => e.Descripcion == id);
+
             }
             catch (Exception)
             {
@@ -118,33 +138,9 @@ namespace Daniel_Montero_Ap1_p1.BLL
 
             }
             return encontrado;
-          
-      }
-      public static bool Existes(string id)
-      {
-        
-            Contexto contexto = new Contexto();
-              bool encontrado = false;
 
-            try
-            {
-
-                encontrado=contexto.Productos.Any(e=>e.Descripcion==id);
-              
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-
-            }
-            return encontrado;
-          
-      }
-      public static List<Productos> GetList(Expression<Func<Productos, bool>> criterio)
+        }
+        public static List<Productos> GetList(Expression<Func<Productos, bool>> criterio)
         {
             Contexto contexto = new Contexto();
             List<Productos> lista = new List<Productos>();
@@ -162,15 +158,15 @@ namespace Daniel_Montero_Ap1_p1.BLL
             }
             return lista;
         }
-      public static List<Productos> GeLista()
-      {
-           using (var contexto = new Contexto())
+        public static List<Productos> GeLista()
+        {
+            using (var contexto = new Contexto())
             {
-                     return contexto.Productos.ToList();
+                return contexto.Productos.ToList();
             }
-      
 
-      }
+
+        }
           
 
 
