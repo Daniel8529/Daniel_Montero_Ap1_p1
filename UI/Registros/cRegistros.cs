@@ -83,7 +83,7 @@ namespace Daniel_Montero_Ap1_p1.UI.Registros
                     bool paso = false;
 
 
-
+                    producto.ValorInventario=producto.Existencia*producto.Costo;
                     paso = ProductosBLL.insertar(producto);
 
                     if (paso)
